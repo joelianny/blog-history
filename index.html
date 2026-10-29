@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Blog History</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>🌸 Blog History ✨</h1>
+        <p class="subtitulo">Tu espacio favorito para organizar y crecer 🌷</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <button class="nav-btn" onclick="mostrarSeccion('inicio')">🏠 Inicio</button>
+        <button class="nav-btn" onclick="mostrarSeccion('calendario')">📅 Calendario</button>
+        <button class="nav-btn" onclick="mostrarSeccion('salud')">💗 Salud y Bienestar</button>
+        <button class="nav-btn" onclick="mostrarSeccion('estudios')">📚 Estudios y Creatividad</button>
+        <button class="nav-btn" onclick="mostrarSeccion('tareas')">✅ Tareas y Actividades</button>
+        <button class="nav-btn" onclick="mostrarSeccion('cuenta')">👤 Cuenta y Privacidad</button>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- INICIO -->
+        <section id="inicio" class="seccion activa">
+            <h2>🌷 ¡Bienvenida a Blog History!</h2>
+            <p>Tu espacio personal para organizar tu vida, cuidarte, estudiar y soñar en grande ✨</p>
+            <div class="tarjetas-inicio">
+                <div class="tarjeta">
+                    <h3>📅 Organiza tu mes</h3>
+                    <p>Planifica cada día con tu calendario mensual</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>💗 Cuídate mucho</h3>
+                    <p>Consejos de salud y bienestar para ti</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>📚 Crece y aprende</h3>
+                    <p>Espacio para tus estudios y creatividad</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>✅ Mantente al día</h3>
+                    <p>Lista de tareas y actividades</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALENDARIO -->
+        <section id="calendario" class="seccion">
+            <h2>📅 Calendario Mensual</h2>
+            <div class="mes">
+                <h3 id="nombre-mes">Octubre 2026</h3>
+                <div class="dias-semana">
+                    <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+                </div>
+                <div class="dias-calendario" id="dias-calendario"></div>
+            </div>
+            <div class="nota-dia">
+                <h4>📝 Notas del día</h4>
+                <textarea id="texto-nota" placeholder="Escribe algo especial para hoy... 💖"></textarea>
+                <button onclick="guardarNota()">💾 Guardar Nota</button>
+                <p id="mensaje-guardado"></p>
+            </div>
+        </section>
+
+        <!-- SALUD Y BIENESTAR -->
+        <section id="salud" class="seccion">
+            <h2>💗 Salud y Bienestar</h2>
+            <div class="contenido-seccion">
+                <div class="articulo">
+                    <h3>💧 Hidratación</h3>
+                    <p>¡Bebe al menos 8 vasos de agua al día! Tu cuerpo te lo agradecerá ✨</p>
+                </div>
+                <div class="articulo">
+                    <h3>😴 Descanso</h3>
+                    <p>Intenta dormir entre 8 y 9 horas. ¡Tu energía es importante!</p>
+                </div>
+                <div class="articulo">
+                    <h3>🧘 Bienestar emocional</h3>
+                    <p>Tómate tiempo para ti. Respira profundo, todo estará bien 🌸</p>
+                </div>
+                <div class="articulo">
+                    <h3>🏃 Movimiento</h3>
+                    <p>Camina, baila o estira unos minutos cada día 💃</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTUDIOS Y CREATIVIDAD -->
+        <section id="estudios" class="seccion">
+            <h2>📚 Estudios y Creatividad</h2>
+            <div class="contenido-seccion">
+                <div class="articulo">
+                    <h3>📖 Organización de estudio</h3>
+                    <p>Divide tus tareas en partes pequeñas. ¡Todo es más fácil paso a paso!</p>
+                </div>
+                <div class="articulo">
+                    <h3>🎨 Libretas y apuntes</h3>
+                    <p>Usa colores y dibujos. ¡Aprender puede ser hermoso! ✏️🌈</p>
+                </div>
+                <div class="articulo">
+                    <h3>💡 Ideas creativas</h3>
+                    <p>Siempre lleva una libreta contigo para anotar tus ideas brillantes ✨</p>
+                </div>
+                <div class="articulo">
+                    <h3>🎧 Música para concentrarse</h3>
+                    <p>La música suave ayuda a concentrarte mejor en tus estudios 🎵</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAREAS Y ACTIVIDADES -->
+        <section id="tareas" class="seccion">
+            <h2>✅ Mis Tareas y Actividades</h2>
+            <div class="agregar-tarea">
+                <input type="text" id="nueva-tarea" placeholder="Escribe una tarea... ✏️">
+                <button onclick="agregarTarea()">➕ Agregar</button>
+            </div>
+            <ul id="lista-tareas"></ul>
+        </section>
+
+        <!-- CUENTA Y PRIVACIDAD -->
+        <section id="cuenta" class="seccion">
+            <h2>👤 Cuenta y Privacidad</h2>
+            <div class="contenido-seccion">
+                <div class="articulo">
+                    <h3>🔒 Tus datos</h3>
+                    <p>Tus notas y tareas se guardan solo en tu dispositivo. ¡Nadie más las ve!</p>
+                </div>
+                <div class="articulo">
+                    <h3>💾 Respaldo</h3>
+                    <p>Recuerda que todo se guarda en tu navegador. Si borras los datos, se reiniciará.</p>
+                </div>
+                <div class="articulo">
+                    <h3>✨ Versión</h3>
+                    <p>Blog History — Versión 1.0 💖 Hecho con amor</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>🌸 Blog History — Hecho con amor ✨ | © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
